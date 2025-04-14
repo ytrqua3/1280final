@@ -11,7 +11,7 @@ while read line; do
 			if echo $table_row | grep -E -q "^$term(,[^,]*){2}"; then
 				if [ "$(echo $table_row | cut -d"," -f2)" == "text" ]; then
 					#repl=$(echo $table_row | cut -d"," -f3 | tr -d "\"")
-					repl=$(echo $table_row | cut -d"," -f3 | sed "s/^\"//" | sed "s/\"$//")
+					repl=$(echo $table_row | sed -E "s/^[^,]*,[^,]*,\"(.*)\"$/\1/")
 				elif [ "$(echo $table_row | cut -d"," -f2)" == "number" ]; then
 					repl=$(echo $table_row | cut -d"," -f3)
 				elif [ "$(echo $table_row | cut -d"," -f2)" == "formula" ]; then

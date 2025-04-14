@@ -1,0 +1,6 @@
+amt,number,500
+phrase,text,"The wind blows in the winter"
+phrase2,text,"I want all the money, please give me all the money"
+phrase3,text,"I want all the money, please give me all the money two"
+formula1,formula,scale=6;9.4 + 6.7 * 3 /67
+formula2,formula,6*56-47
